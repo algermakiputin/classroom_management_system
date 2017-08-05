@@ -1,0 +1,349 @@
+* {
+	font-family:arial ;
+	font-size: 15px;
+}
+body {
+
+
+}
+
+.navbar {
+	margin-bottom: 0;
+	background-color: black;
+	border-radius: 0;
+	border:0;
+}
+
+.navi {
+	height: 53px;
+	padding: 0;
+	margin:5px 0;
+}
+
+.nav-btn {
+	padding: 0;
+	list-style-type: none;
+}
+
+.nav-btn a li {
+	padding: 14px;
+	float: left;
+	margin-right: 5px;
+	border:0.5px silver solid;
+	border-radius: 5px;
+	font-size: 16px;
+	font-weight: bolder;
+
+}
+
+.room_number {
+	padding: 10px 10px;
+	border:solid .5px silver;
+	font-size: 18px;
+	font-weight: bolder;
+}
+
+.sched-main {
+}
+
+.schedule_table {
+	border-collapse: collapse;
+}
+
+.schedule_table th {
+	border: solid 0.5px silver;
+
+} 
+
+.schedule_table tr {
+	border-bottom: 0.5px solid silver;
+}
+
+.schedule_table td {
+	border-left: 0.5px solid silver;
+	border-right: 0.5px solid silver;
+} 
+
+.room-aside {
+	border: 0.5px solid silver;
+	min-height: 486px;
+}
+
+.room-side-nav {
+	border:solid 0.5px silver;
+	min-height: 500px;
+	padding: 0;
+}
+
+.room-side-nav-header {
+	padding: 10px;
+	text-align: center;
+	border-bottom: .5px solid silver;
+	font-weight: bolder;
+	font-size: 18px;
+}
+
+.room-side-nav nav ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+.room-side-nav nav ul li {
+	text-align: center;
+	padding: 0;
+	margin:5px 0;
+	border-bottom: 0.5px silver solid;
+	padding-bottom: 5px;
+}
+
+.room-side-nav nav ul li a {
+	padding: 0;
+}
+
+.room-side-nav nav ul li a:hover {
+	text-decoration: none;
+}
+
+.room-main {
+	padding: 0 10px;
+}
+
+#room-main {
+	border: solid 0.5px silver;
+
+	min-height: 500px;
+
+}
+
+.link-active {
+	color: white;
+	background: green;
+}
+
+.title-heading {
+	text-align: center;
+	padding: 10px 0;
+	font-weight: bolder;
+	font-size: 18px;
+	border-bottom:.5px solid silver;
+
+}
+
+.room-list {
+	text-align: center;
+}
+
+.room-list nav ul {
+	list-style-type: none;
+	padding: 0;
+
+}
+
+.room-list nav ul a li {
+	border-bottom: solid 0.5px silver;
+	padding: 5px;
+	color: black;
+}
+
+.room-list nav ul a:hover {
+	text-decoration: none;
+}
+
+.room-list nav ul a li:hover {
+	background-color: silver;
+	cursor: pointer;
+
+}
+
+.set-schedule-main {
+	border: solid;
+	border:solid .5px silver;
+	min-height: 500px;	
+}
+
+.set-schedule-header {
+	padding: 10px;
+	font-weight: bolder;
+	font-size: 18px;
+	border-bottom: .5px silver solid;
+}
+
+.room-wrapper {
+	padding: 5px;
+
+}
+
+.room-box {
+	padding: 10px;
+}
+
+.room-box-content {
+	border:solid 0.5px silver;
+	padding: 20px;
+}
+
+.room-number {
+	font-weight: 800;
+}
+
+.new-room-form-header {
+	padding: 10px;
+	font-size: 18px;
+	font-weight: bolder;
+	border-radius: 5px;
+	border:solid .5px silver;
+	margin-bottom: 10px;
+}
+
+.set_schedule_header {
+	padding: 10px;
+	border-bottom: .5px silver solid;
+	font-size: 18px;
+	font-weight: bolder;
+}
+
+.set_schedule_header h2 {
+	padding: 0;
+	margin: 0;
+
+}
+
+.dashboard {
+	min-height: 500px;
+	border:solid 0.5px silver;
+	margin-bottom: 40px;
+	padding-bottom: 15px;
+}
+
+.new-room {
+	padding: 10px;
+	
+}
+
+.new-schedule {
+	padding: 10px;
+
+}
+
+.new-room-content {
+	min-height: 250px;
+	border:solid;
+	border:0.5px silver solid;
+}
+
+.new-schedule-content {
+	min-height: 250px;
+	border:0.5px silver solid;
+
+}
+
+.new-account-content {
+	min-height: 250px;
+	border:0.5px silver solid;
+
+}
+
+.new-room-title div {
+	padding: 10px;
+	font-size: 18px;
+	font-weight: bolder;
+	border-bottom:solid .5px silver;
+}
+
+.new-schedule-title div {
+	padding: 10px;
+	font-size: 18px;
+	font-weight: bolder;
+	border-bottom:solid .5px silver;
+}
+
+.new-account-title div {
+	padding: 10px;
+	font-size: 18px;
+	font-weight: bolder;
+	border-bottom:solid .5px silver;
+}
+
+.new-room-body ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+.new-room-body ul li {
+	padding: 5px;
+	border-bottom: solid 0.5px silver;
+}
+
+
+.accounts {
+	min-height: 500px;
+	
+}
+
+.accounts-side-nav {
+	border: .5px silver solid;
+	min-height:500px;
+}
+
+.accounts-main {
+	height: 500px;
+	border: .5px silver solid;
+}	
+
+.accounts-menu-header {
+	padding: 10px;
+	text-align: center;
+	font-size: 18px;
+	font-weight: bolder;
+	border-bottom: .5px silver solid;
+}
+
+.accounts-side-nav .row ul {
+	text-decoration: none;
+	padding: 0;
+	list-style-type: none;
+}
+
+.accounts-side-nav .row ul li {
+	text-align: center;
+	padding: 5px;
+	border-bottom: .5px solid silver;
+}
+
+.accounts-main-header {
+	padding: 10px;
+	font-size: 18px;
+	font-weight: bolder;
+	border-bottom: .5px solid silver;
+	margin-bottom: 10px;
+}
+
+.setting {
+	min-height: 500px;
+	border: .5px silver solid;
+}
+
+.setting-header {
+	padding: 10px;
+	font-weight: bolder;
+	font-size: 18px;
+	border-bottom: .5px silver solid;
+}
+
+.setting-body {
+	padding: 10px 0;
+}
+
+.setting-body .lb {
+	font-size: 16px;
+	font-weight: bolder;
+}
+
+.setting-body .lb span {
+	float: right;
+}
+
+.setting-body .txt {
+	font-size: 16px;
+}
+
