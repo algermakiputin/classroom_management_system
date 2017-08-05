@@ -1,1 +1,2 @@
-# classroom_management_system
+The Partial Design
+![](partial_design.png)
