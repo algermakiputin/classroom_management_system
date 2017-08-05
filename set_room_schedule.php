@@ -52,7 +52,8 @@
 	<div class="navbar navbar-default">
 		<div class="container">
 			<div class="navbar-header">
-				<a href="" class="navbar-brand">Classroom CMS</a>
+				<a href="" class="navbar-brand">Classroom Management System</a>
+				<link rel="stylesheet" type="text/css" href="Assets/font-awesome-4.7.0/css/font-awesome.min.css">
 			</div>
 		</div>
 	</div>
@@ -62,11 +63,19 @@
 		<div class="container">
 			<div class="row">
 				<ul class="nav-btn">
-					<a href="dashboard.php"><li >Dashboard</li></a>
-					<a href="room.php"><li>Classrooms</li></a>
-					<a href="set_schedule.php"><li>Set Schedule</li></a>
-					<a href="schedule.php"><li>Schedule</li></a>
-					<a href="account.php"><li>Accounts</li></a>
+					<a href="dashboard.php"><li>
+					<i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</li></a>
+					<a href="room.php"><li>
+					<i class="fa fa-door" aria-hidden="true"></i>
+					<i class="fa fa-university" aria-hidden="true"></i> Classrooms</li></a>
+					<a href="set_schedule.php"><li>
+					<i class="fa fa-clock-o"></i> Set Schedule</li></a>
+					<a href="schedule.php"><li>
+					<i class="fa fa-calendar" aria-hidden="true"></i> Schedule</li></a>
+					<a href="account.php"><li>
+					<i class="fa fa-user-circle-o" aria-hidden="true"></i> Accounts</li></a>
+					<a href="setting.php"><li>
+					<i class="fa fa-cog" aria-hidden="true"></i> Settings</li></a>
 				</ul>
 				<div style="float: right;font-weight: bolder;font-size: 22px;color: silver;padding: 4px;margin-top: -2.8px;">
 					-- Set Room Schedule --

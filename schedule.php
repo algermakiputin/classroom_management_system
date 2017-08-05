@@ -20,13 +20,14 @@ $setting = mysqli_fetch_assoc($exec);
 	<title>Classroom Management System</title>
 	<link rel="stylesheet" type="text/css" href="Assets/bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="Assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="Assets/font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <div class="header">
 	<div class="navbar navbar-default">
 		<div class="container">
 			<div class="navbar-header">
-				<a href="" class="navbar-brand">Classroom CMS</a>
+				<a href="" class="navbar-brand">Classroom Management System</a>
 			</div>
 		</div>
 	</div>
@@ -36,13 +37,21 @@ $setting = mysqli_fetch_assoc($exec);
 		<div class="container">
 			<div class="row">
 				<ul class="nav-btn">
-					<a href="dashboard.php"><li>Dashboard</li></a>
-					<a href="room.php"><li>Classrooms</li></a>
-					<a href="set_schedule.php"><li>Set Schedule</li></a>
-					<a href="schedule.php"><li>Schedule</li></a>
-					<a href="account.php"><li>Accounts</li></a>
+					<a href="dashboard.php"><li>
+					<i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</li></a>
+					<a href="room.php"><li>
+					<i class="fa fa-door" aria-hidden="true"></i>
+					<i class="fa fa-university" aria-hidden="true"></i> Classrooms</li></a>
+					<a href="set_schedule.php"><li>
+					<i class="fa fa-clock-o"></i> Set Schedule</li></a>
+					<a href="schedule.php"><li>
+					<i class="fa fa-calendar" aria-hidden="true"></i> Schedule</li></a>
+					<a href="account.php"><li>
+					<i class="fa fa-user-circle-o" aria-hidden="true"></i> Accounts</li></a>
+					<a href="setting.php"><li>
+					<i class="fa fa-cog" aria-hidden="true"></i> Settings</li></a>
 				</ul>
-				<div style="float: right;font-weight: bolder;font-size: 22px;color: silver;padding: 4px;margin-top: -2.8px;">
+
 				<?php
 				$extension = "";
 				if ($setting['sem'] == 1) {
@@ -51,8 +60,7 @@ $setting = mysqli_fetch_assoc($exec);
 					$extension = 'nd';
 				}
 				?>
-					-- Schedule --
-				</div>
+
 			</div>
 		</div>
 	</nav>
@@ -160,6 +168,7 @@ $setting = mysqli_fetch_assoc($exec);
 			}
 			?>
 		<?php
+
 		$table = "";
 		$table .= "<table class='schedule_table table'>
 			<tr>
@@ -204,9 +213,6 @@ $setting = mysqli_fetch_assoc($exec);
 
 			$table .= "</tr>";
 			?>
-
-
-			
 
 			<?php
 			foreach ($tueSched as $tuesday) {
@@ -350,17 +356,13 @@ $setting = mysqli_fetch_assoc($exec);
 				?>
 				<div class="room_number">
 					-- Room <?php echo $smallest ?> SY <?php echo $setting['sy_from'] . ' - ' . $setting['sy_to'] . ' Sem:' . $setting['sem'] . $extension  ?> --
-					<div style="float: right; margin-top: 0px;">
-						<a href="test.php?data=<?php echo $table ?>"><span class="badge" style="color: white;cursor: pointer; line-height: 1.5">Import To Excel</span></a>&nbsp;&nbsp;
-						<a href="set_room_schedule.php?room_no=<?php echo $smallest ?>&id=4"><span class="badge" style="color: white;cursor: pointer; line-height: 1.5">Update Schedule</span></a>
-					</div>
 				</div>
 			<?php
 			echo $table;
 		}else if (isset($_GET['room_number'])) {
 			?>
 			<?php
-			$sql = "SELECT * FROM schedule WHERE room_id = '$_GET[room_id]' ORDER BY str_to_date(start_time,'%h:%m %p')";
+			$sql = "SELECT * FROM schedule WHERE room_id = '$_GET[room_id]' AND sy_from = '$setting[sy_from]' AND sy_to = '$setting[sy_to]' AND semester = $setting[sem] ORDER BY str_to_date(start_time,'%h:%m %p')";
 			$exec = mysqli_query($con,$sql);
 			$num_rows = mysqli_num_rows($exec);
 			$data = [];
@@ -424,10 +426,6 @@ $setting = mysqli_fetch_assoc($exec);
 			?>
 		<div class="room_number">
 			-- Room <?php echo $_GET['room_number'] ?> - Schedule  --
-			<div style="float: right; margin-top: 0px;">
-				<a><span class="badge" style="color: white;cursor: pointer; line-height: 1.5">Import To Excel</span></a>&nbsp;&nbsp;
-				<a><span class="badge" style="color: white;cursor: pointer; line-height: 1.5">Edit</span></a>
-			</div>
 		</div>
 		<?php
 		$table = "";

@@ -54,13 +54,14 @@
 	<title>School Year & Semester</title>
 	<link rel="stylesheet" type="text/css" href="Assets/bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="Assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="Assets/font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <div class="header">
 	<div class="navbar navbar-default">
 		<div class="container">
 			<div class="navbar-header">
-				<a href="" class="navbar-brand">Classroom CMS</a>
+				<a href="" class="navbar-brand">Classroom Management System</a>
 			</div>
 		</div>
 	</div>
@@ -70,16 +71,20 @@
 		<div class="container">
 			<div class="row">
 				<ul class="nav-btn">
-					<a href="dashboard.php"><li>Dashboard</li></a>
-					<a href="room.php"><li>Classrooms</li></a>
-					<a href="set_schedule.php"><li>Set Schedule</li></a>
-					<a href="schedule.php"><li>Schedule</li></a>
-					<a href="account.php"><li>Accounts</li></a>
-					<a href="setting.php"><li>Settings</li></a>
+					<a href="dashboard.php"><li>
+					<i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</li></a>
+					<a href="room.php"><li>
+					<i class="fa fa-door" aria-hidden="true"></i>
+					<i class="fa fa-university" aria-hidden="true"></i> Classrooms</li></a>
+					<a href="set_schedule.php"><li>
+					<i class="fa fa-clock-o"></i> Set Schedule</li></a>
+					<a href="schedule.php"><li>
+					<i class="fa fa-calendar" aria-hidden="true"></i> Schedule</li></a>
+					<a href="account.php"><li>
+					<i class="fa fa-user-circle-o" aria-hidden="true"></i> Accounts</li></a>
+					<a href="setting.php"><li>
+					<i class="fa fa-cog" aria-hidden="true"></i> Settings</li></a>
 				</ul>
-				<div style="float: right;font-weight: bolder;font-size: 22px;color: silver;padding: 3px;margin-top: -2.8px;">
-					-- Dashboard --
-				</div>
 			</div>
 		</div>
 	</nav>
@@ -106,7 +111,7 @@
 					-- Settings --
 				</div>
 			</div>
-			<div class="col-md-6 setting-body">
+			<div class="col-md-6 setting-body" style="font-weight: 600;">
 				<div class="row">
 					<div class="col-sm-12 ">
 						<h4 class="pag-header">Current Setting</h4>
@@ -152,8 +157,8 @@
 							<span style="float: right;">:</span>
 						</div>
 						<div class="col-sm-8">
-							<input type="text" name="sc_name">
-							<input type="submit" name="update_school_name" value="Update">
+							<input type="text" name="sc_name" placeholder="Update School Name">
+							<input class="setting_btn" type="submit" name="update_school_name" value="Update">
 						</div>
 					</form>
 					<hr>
@@ -166,7 +171,7 @@
 						<div class="col-sm-8">
 							<input placeholder="From" type="number" name="from" style="width: 96px;" min="2000" max="2900">
 							<input placeholder="To" type="number" name="to" style="width: 96px;" min="2000" max="2900">
-							<input type="submit" name="update_sy" value="Update">
+							<input class="setting_btn" type="submit" name="update_sy" value="Update">
 						</div>
 					</form>
 					<hr><br>
@@ -178,7 +183,7 @@
 						</div>
 						<div class="col-sm-8">
 							<input type="number" min="1" max="2" name="sem" style="width: 196px" placeholder="Semester">
-							<input type="submit" name="update_sem" value="Update">
+							<input class="setting_btn" type="submit" name="update_sem" value="Update" class="btn-info">
 						</div>
 					</form>
 					<hr>

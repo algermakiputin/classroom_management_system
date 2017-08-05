@@ -9,15 +9,23 @@ body {
 
 .navbar {
 	margin-bottom: 0;
-	background-color: black;
+	background-color: #fff;
 	border-radius: 0;
 	border:0;
+	border-bottom: solid 1px #333;
+	margin-bottom: 25px;
+
+}
+
+.navbar-brand {
+	color: black !important;
 }
 
 .navi {
 	height: 53px;
 	padding: 0;
 	margin:5px 0;
+	margin-bottom: 25px;
 }
 
 .nav-btn {
@@ -29,16 +37,15 @@ body {
 	padding: 14px;
 	float: left;
 	margin-right: 5px;
-	border:0.5px silver solid;
-	border-radius: 5px;
+	border: 1px #333 solid;
 	font-size: 16px;
-	font-weight: bolder;
-
+	font-weight: normal;
+	color: black;
 }
 
 .room_number {
 	padding: 10px 10px;
-	border:solid .5px silver;
+	border:solid 1px #333;
 	font-size: 18px;
 	font-weight: bolder;
 }
@@ -51,34 +58,35 @@ body {
 }
 
 .schedule_table th {
-	border: solid 0.5px silver;
+	border: solid 1px #333;
 
 } 
 
 .schedule_table tr {
-	border-bottom: 0.5px solid silver;
+	border-bottom: 1px solid #333;
 }
 
 .schedule_table td {
-	border-left: 0.5px solid silver;
-	border-right: 0.5px solid silver;
+	border-left: 1px solid #333;
+	border-right: 1px solid #333;
+
 } 
 
 .room-aside {
-	border: 0.5px solid silver;
-	min-height: 486px;
+	border: 1px solid #333;
+	min-height: 450px;
 }
 
 .room-side-nav {
-	border:solid 0.5px silver;
-	min-height: 500px;
+	border:solid 1px #333;
+	min-height: 450px;
 	padding: 0;
 }
 
 .room-side-nav-header {
 	padding: 10px;
 	text-align: center;
-	border-bottom: .5px solid silver;
+	border-bottom: 1px solid #333;
 	font-weight: bolder;
 	font-size: 18px;
 }
@@ -92,7 +100,7 @@ body {
 	text-align: center;
 	padding: 0;
 	margin:5px 0;
-	border-bottom: 0.5px silver solid;
+	border-bottom: 1px #333 solid;
 	padding-bottom: 5px;
 }
 
@@ -109,9 +117,9 @@ body {
 }
 
 #room-main {
-	border: solid 0.5px silver;
+	border: solid 1px #333;
 
-	min-height: 500px;
+	min-height: 450px;
 
 }
 
@@ -125,7 +133,7 @@ body {
 	padding: 10px 0;
 	font-weight: bolder;
 	font-size: 18px;
-	border-bottom:.5px solid silver;
+	border-bottom:1px solid #333;
 
 }
 
@@ -140,7 +148,7 @@ body {
 }
 
 .room-list nav ul a li {
-	border-bottom: solid 0.5px silver;
+	border-bottom: solid 1px #333;
 	padding: 5px;
 	color: black;
 }
@@ -156,16 +164,15 @@ body {
 }
 
 .set-schedule-main {
-	border: solid;
-	border:solid .5px silver;
-	min-height: 500px;	
+	border:solid 1px #333;
+	min-height: 450px;	
 }
 
 .set-schedule-header {
 	padding: 10px;
 	font-weight: bolder;
 	font-size: 18px;
-	border-bottom: .5px silver solid;
+	border-bottom: 1px #333 solid;
 }
 
 .room-wrapper {
@@ -178,7 +185,7 @@ body {
 }
 
 .room-box-content {
-	border:solid 0.5px silver;
+	border:solid 1px #333;
 	padding: 20px;
 }
 
@@ -191,13 +198,13 @@ body {
 	font-size: 18px;
 	font-weight: bolder;
 	border-radius: 5px;
-	border:solid .5px silver;
+	border:solid 1px #333;
 	margin-bottom: 10px;
 }
 
 .set_schedule_header {
 	padding: 10px;
-	border-bottom: .5px silver solid;
+	border-bottom: 1px #333 solid;
 	font-size: 18px;
 	font-weight: bolder;
 }
@@ -209,8 +216,9 @@ body {
 }
 
 .dashboard {
-	min-height: 500px;
-	border:solid 0.5px silver;
+	padding: 10px;
+	min-height: 450px;
+	border:solid 1px #333;
 	margin-bottom: 40px;
 	padding-bottom: 15px;
 }
@@ -227,19 +235,22 @@ body {
 
 .new-room-content {
 	min-height: 250px;
-	border:solid;
-	border:0.5px silver solid;
+	border:1px #333 solid;
 }
 
 .new-schedule-content {
 	min-height: 250px;
-	border:0.5px silver solid;
+	border:1px #333 solid;
 
+}
+
+.new-account {
+	padding: 10px;
 }
 
 .new-account-content {
 	min-height: 250px;
-	border:0.5px silver solid;
+	border:1px #333 solid;
 
 }
 
@@ -247,21 +258,21 @@ body {
 	padding: 10px;
 	font-size: 18px;
 	font-weight: bolder;
-	border-bottom:solid .5px silver;
+	border-bottom:solid 1px #333;
 }
 
 .new-schedule-title div {
 	padding: 10px;
 	font-size: 18px;
 	font-weight: bolder;
-	border-bottom:solid .5px silver;
+	border-bottom:solid 1px #333;
 }
 
 .new-account-title div {
 	padding: 10px;
 	font-size: 18px;
 	font-weight: bolder;
-	border-bottom:solid .5px silver;
+	border-bottom:solid 1px #333;
 }
 
 .new-room-body ul {
@@ -271,23 +282,23 @@ body {
 
 .new-room-body ul li {
 	padding: 5px;
-	border-bottom: solid 0.5px silver;
+	border-bottom: solid 1px #333;
 }
 
 
 .accounts {
-	min-height: 500px;
+	min-height: 450px;
 	
 }
 
 .accounts-side-nav {
-	border: .5px silver solid;
-	min-height:500px;
+	border: 1px #333 solid;
+	min-height:450px;
 }
 
 .accounts-main {
-	height: 500px;
-	border: .5px silver solid;
+	min-height: 450px;
+	border: 1px #333 solid;
 }	
 
 .accounts-menu-header {
@@ -295,7 +306,7 @@ body {
 	text-align: center;
 	font-size: 18px;
 	font-weight: bolder;
-	border-bottom: .5px silver solid;
+	border-bottom: 1px #333 solid;
 }
 
 .accounts-side-nav .row ul {
@@ -307,27 +318,32 @@ body {
 .accounts-side-nav .row ul li {
 	text-align: center;
 	padding: 5px;
-	border-bottom: .5px solid silver;
+	border-bottom: 1px solid #333;
+
+}
+
+.accounts-side-nav .row ul li a {
+	color: black;
 }
 
 .accounts-main-header {
 	padding: 10px;
 	font-size: 18px;
 	font-weight: bolder;
-	border-bottom: .5px solid silver;
+	border-bottom: 1px solid #333;
 	margin-bottom: 10px;
 }
 
 .setting {
-	min-height: 500px;
-	border: .5px silver solid;
+	min-height: 450px;
+	border: 1px #333 solid;
 }
 
 .setting-header {
 	padding: 10px;
 	font-weight: bolder;
 	font-size: 18px;
-	border-bottom: .5px silver solid;
+	border-bottom: 1px #333 solid;
 }
 
 .setting-body {
@@ -347,3 +363,12 @@ body {
 	font-size: 16px;
 }
 
+.setting_btn {
+	font-weight: 600;
+	border-radius: 3px;
+	
+}
+
+.room-menu li a {
+	color: #333;
+}
