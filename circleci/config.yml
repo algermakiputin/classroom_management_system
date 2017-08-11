@@ -2,7 +2,11 @@ version: 2
 jobs:
    build:
      docker:
+<<<<<<< HEAD
        - image: circleci/php:7
+=======
+       - image: circleci/php:7.1
+>>>>>>> ecd001a4c521a4e25556e4276bf7a8622b3ee154
      steps:
        - checkout
        - run: echo "hello world"
