@@ -108,10 +108,10 @@
 		<div class="col-md-12 setting">
 			<div class="row">
 				<div class="setting-header">
-					-- Settings --
+					Settings 
 				</div>
 			</div>
-			<div class="col-md-6 setting-body" style="font-weight: 600;">
+			<!-- <div class="col-md-6 setting-body" style="font-weight: 600;">
 				<div class="row">
 					<div class="col-sm-12 ">
 						<h4 class="pag-header">Current Setting</h4>
@@ -141,11 +141,10 @@
 					}
 					?>
 				</div>
-			</div>
+			</div> -->
 			<div class="col-md-6 setting-body">
 				<div class="row">
 					<div class="col-sm-12 ">
-						<h4 style="margin-bottom: 17px;" class="pag-header">Update Setting</h4>
 						<?php echo errorMessage(); ?>
 						<?php echo successMessage(); ?>
 					</div>

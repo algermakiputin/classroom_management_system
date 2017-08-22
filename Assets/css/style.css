@@ -4,21 +4,22 @@
 }
 body {
 
+	background: url("Assets/image/classroom.png");
 
 }
 
 .navbar {
 	margin-bottom: 0;
-	background-color: #fff;
+	background-color: #333;
 	border-radius: 0;
 	border:0;
-	border-bottom: solid 1px #333;
 	margin-bottom: 25px;
-
+	color: #fff;
 }
 
 .navbar-brand {
-	color: black !important;
+	color: #fff !important;
+	font-size: 22px;
 }
 
 .navi {
@@ -185,8 +186,10 @@ body {
 }
 
 .room-box-content {
-	border:solid 1px #333;
+
 	padding: 20px;
+	border-radius: 5px;
+	box-shadow: 2px 2px 0 ;
 }
 
 .room-number {
@@ -347,7 +350,10 @@ body {
 }
 
 .setting-body {
-	padding: 10px 0;
+	padding: 30px;
+	border: solid 1px;
+	margin-top: 20px;
+	border-radius: 10px;
 }
 
 .setting-body .lb {
@@ -371,4 +377,33 @@ body {
 
 .room-menu li a {
 	color: #333;
+}
+
+.form-wrapper {
+
+	margin-top: 20px;
+	padding: 20px;
+
+}
+
+.dashboard-card {
+
+	padding: 10px;
+}
+
+.dashboard-card div  {
+	text-align: center;
+	border: solid 0.5px;
+	padding: 20px;
+	border-radius: 10px;
+}
+
+.dashboard-card .glyphicon {
+	font-size: 100px;
+	color: black;
+
+}
+.dashboard-card div:hover {
+	border-bottom: solid 13px;
+	cursor: pointer;
 }

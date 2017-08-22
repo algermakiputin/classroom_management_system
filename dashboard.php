@@ -1,4 +1,5 @@
 <?php include('Includes/database.php') ?>
+<?php include('Includes/functions.php') ?>
 <?php session_start(); ?>
 <!DOCTYPE html>
 <html>
@@ -44,108 +45,43 @@
 <div class="container">
 <div class="row">
 <div class="col-md-12 dashboard">
-		<div class="col-md-12 new-room">
-			<div class="new-room-content">
-				<div class="new-room-title">
-					<div class="">Recently Added Room</div>	
-				</div>
-				<div class="new-room-body">
-					<table class="table table-hover table-striped">
-						<tr>
-							<th></th>
-							<th>Room No.</th>
-							<th>Floor Level</th>
-							<th>Date Time</th>
-						</tr>
-					<?php
-					$sql = "SELECT * FROM room ORDER BY room_id DESC LIMIT 5";
-					$exec = mysqli_query($con, $sql);
-					$count = 1;
-					while ($row = mysqli_fetch_assoc($exec)) {
-						?>
-						<tr>
-							<td><?php echo $count ?></td>
-							<td><?php echo $row['room_number'] ?></td>
-							<td><?php echo $row['floor_level'] ?></td>
-							<td><?php echo $row['date_added'] ?></td>
-						</tr>
-						<?php
-						$count++;
-					}
-					?>
-					</table>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-12 new-schedule">
-			<div class="new-schedule-content">
-				<div class="new-schedule-title">
-					<div class="">Recently Added Schedule</div>
-				</div>
-				<div class="new-schedule-body">
-					<table class="table table-striped table-hover">
-					<tr>
-						<th></th>
-						<th>Room Number</th>
-						<th>Subject</th>
-						<th>Time</th>
-						<th>Day</th>
-					</tr>
-					<?php
-					$sql = "SELECT * FROM schedule ORDER BY schedule_id LIMIT 5";
-					$exec = mysqli_query($con,$sql);
-					$count = 1;
-					while ($row = mysqli_fetch_assoc($exec)) {
-				
-						?>
-						<tr>
-							<td><?php echo $count ?></td>
-							<td><?php echo $row['r_number'] ?></td>
-							<td><?php echo $row['subject_name'] ?></td>
-							<td><?php echo $row['start_time'] . ' - ' . $row['end_time'] ?></td>
-							<td><?php echo $row['day'] ?></td>
-						</tr>
+	<?php
+		$query = "SELECT * from room";
 
-						<?php
-						$count++;
-					}
-					?>
-					</table>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-12 new-account">
-			<div class="new-account-content">
-				<div class="new-account-title">
-					<div class="">Recently Added Account</div>
-				</div>
-				<div class="new-account-body">
-					<table class="table table-hover table-striped">
-						<tr>
-							<th></th>
-							<th>Name</th>
-							<th>Date Time</th>
-						</tr>
-					<?php
-						$num = 1;
-						$sql = "SELECT * FROM accounts ORDER BY id DESC";
-						$exec = mysqli_query($con, $sql);
-						while ($row = mysqli_fetch_assoc($exec)) {
-							?>
-							<tr>
-								<td><?php echo $num ?></td>
-								<td><?php echo $row['name'] ?></td>
-								<td><?php echo $row['date_created']?></td>
-							</tr>
+		$exec = mysqli_query($con, $query);
 
-							<?php
-							$num++;
-						}
-					?>
-					</table>
-				</div>
+		$roomCount = mysqli_num_rows($exec);
+
+		$query = "SELECT * from accounts";
+
+		$exec = mysqli_query($con, $query);
+
+		$accountCount = mysqli_num_rows($exec);
+	?>
+	<a href="room.php">
+		<div class="col-md-4 dashboard-card">
+			<div class="bg-success">
+				<img src="Assets/image/classroom.png">
+				<h2>Classrooms (<?php echo $roomCount ?>)</h2>
 			</div>
 		</div>
+	</a>
+	<a href="account.php">
+		<div class="col-md-4 dashboard-card">
+			<div class="bg-success">
+				<span class="glyphicon glyphicon-user"></span>
+				<h2>Accounts (<?php echo $accountCount ?>)</h2>
+			</div>
+		</div>
+	</a>
+	<a>
+		<div class="col-md-4 dashboard-card">
+			<div class="bg-warning">
+			<h3>School Year: 2017-2018</h3>
+			<h3>Semester: 1st</h3>
+			</div>
+		</div>
+	</a>
 </div>
 </div>
 

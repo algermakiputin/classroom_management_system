@@ -18,7 +18,9 @@ if (isset($_POST['submit'])) {
 	}else if (empty($conf_password)) {
 		$_SESSION['error'] = "Confirm Password Is Required";
 	}else {
+
 		if ($password != $conf_password) {
+			
 			$_SESSION['error'] = "Password and Confirm Password Does Not Match";
 
 		}else if ($password == $conf_password) {
@@ -26,11 +28,16 @@ if (isset($_POST['submit'])) {
 			$hash_pwd = password_hash($password,PASSWORD_DEFAULT);
 
 			$sql = "INSERT INTO accounts (name, username, password,date_created) VALUES('$name','$username','$hash_pwd','$date')";
-			$exec = mysqli_query($con, $sql);
+			$exec = mysqli_query($con, $sql) or die(mysql_errno());
+
 			if ($sql) {
+
 				$_SESSION['success'] = "Account Created Successfully";
+
 			}else {
+
 				$_SESSION['error'] = "Opps.. Something Went Wrong";
+
 			}
 		}
 	}

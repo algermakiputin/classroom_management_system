@@ -78,7 +78,7 @@
 					<i class="fa fa-cog" aria-hidden="true"></i> Settings</li></a>
 				</ul>
 				<div style="float: right;font-weight: bolder;font-size: 22px;color: silver;padding: 4px;margin-top: -2.8px;">
-					-- Set Room Schedule --
+					Set Room Schedule
 				</div>
 			</div>
 		</div>
@@ -102,7 +102,7 @@
 					<div class="row">
 						<div class="col-md-12">
 							<div class="set_schedule_header" >
-								-- Room No. <?php echo $room_no; ?> - Set Schedule --
+								Room No. <?php echo $room_no; ?> - Set Schedule 
 							</div>
 							
  							<div class="col-md-6">

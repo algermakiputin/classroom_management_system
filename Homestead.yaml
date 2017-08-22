@@ -1,0 +1,20 @@
+ip: 192.168.10.10
+memory: 2048
+cpus: 1
+provider: virtualbox
+authorize: ~/.ssh/id_rsa.pub
+keys:
+    - ~/.ssh/id_rsa
+folders:
+    -
+        map: /home/vagrant/Code/classroom_ms
+        to: /home/vagrant/classroom_ms
+sites:
+    -
+        map: cms.dev
+        to: /home/vagrant/classroom_ms
+        
+databases:
+    - students
+name: classroom-ms
+hostname: classroom-ms

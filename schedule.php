@@ -52,15 +52,6 @@ $setting = mysqli_fetch_assoc($exec);
 					<i class="fa fa-cog" aria-hidden="true"></i> Settings</li></a>
 				</ul>
 
-				<?php
-				$extension = "";
-				if ($setting['sem'] == 1) {
-					$extension = 'st';
-				}else {
-					$extension = 'nd';
-				}
-				?>
-
 			</div>
 		</div>
 	</nav>
@@ -81,11 +72,17 @@ $setting = mysqli_fetch_assoc($exec);
 						$room_order = 0;
 						$smallest = 1000;
 						while ($row = mysqli_fetch_assoc($exec)) {
+
 							if ($row['room_id'] > $room_order) {
+
 								$room_order = $row['room_id'];
+
 							}
+
 							if ($row['room_number'] < $smallest) {
+
 								$smallest = $row['room_number'];
+
 							}
 							?>
 							<a href="schedule.php?room_number=<?php echo $row['room_number']?>&room_id=<?php echo $row['room_id']?>"><li><?php echo $row['room_number'] ?></li></a>
@@ -106,7 +103,7 @@ $setting = mysqli_fetch_assoc($exec);
 			?>
 		<?php
 			$sql = "SELECT * FROM schedule WHERE room_id = '$room_order' AND sy_from = '$setting[sy_from]' AND sy_to = '$setting[sy_to]' AND semester = $setting[sem] ORDER BY str_to_date(start_time,'%h:%m %p')";
-			$exec = mysqli_query($con,$sql);
+			$exec = mysqli_query($con,$sql) or die(mysql_errno());
 			$num_rows = mysqli_num_rows($exec);
 			$data = [];
 			$mon = 1;
@@ -355,7 +352,7 @@ $setting = mysqli_fetch_assoc($exec);
 				
 				?>
 				<div class="room_number">
-					-- Room <?php echo $smallest ?> SY <?php echo $setting['sy_from'] . ' - ' . $setting['sy_to'] . ' Sem:' . $setting['sem'] . $extension  ?> --
+					Room <?php echo $smallest ?> 
 				</div>
 			<?php
 			echo $table;
@@ -425,7 +422,7 @@ $setting = mysqli_fetch_assoc($exec);
 			}
 			?>
 		<div class="room_number">
-			-- Room <?php echo $_GET['room_number'] ?> - Schedule  --
+			Room <?php echo $_GET['room_number'] ?> - Schedule
 		</div>
 		<?php
 		$table = "";

@@ -86,7 +86,7 @@
 		<div id="room-main" style="padding-top: 10px;">
 			<div class="col-md-8 ">
 				<div class="new-room-form-header">
-					-- Register New Classroom --
+					Register New Classroom
 				</div>
 				<?php echo errorMessage(); ?>
 				<?php echo successMessage(); ?>

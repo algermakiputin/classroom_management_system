@@ -95,7 +95,7 @@
 			if (!isset($_GET['room_no'])) {
 				?>
 				<div class="set-schedule-header">
-				-- Select Room To Set Schedule --
+				Select Room To Set Schedule
 				</div>
 				<div class="col-md-12 room-wrapper"  >
 					<?php echo successMessage() ?>
@@ -106,14 +106,15 @@
 					while ($row = mysqli_fetch_assoc($exec)) {
 						?>
 						<div class="col-md-2 room-box">
-							<div class="room-box-content">
+							<div class="room-box-content bg-success">
 								<div class="room-number text-center">
 									Room <?php echo $row['room_number'] ?>
 								</div>	
 								<div class="room-description text-center">
-									Status: Available
+									<p>Status: <span style="color: green">Available</span></p>
 									<a href="set_room_schedule.php?room_no=<?php echo $row['room_number'] ?>&id=<?php echo $row['room_id'] ?>">
-										<button class="btn btn-primary btn-sm">New Schedule</button>
+
+										<button class="btn btn-success ">New Schedule</button>
 									</a>
 								</div>
 							</div>
