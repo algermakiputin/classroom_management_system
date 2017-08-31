@@ -1,6 +1,7 @@
 <?php include('../../Includes/database.php') ?>
 <?php include('../../Includes/functions.php') ?>
 <?php session_start(); ?>
+<?php isLogin() ?>
 <?php
 
 	if(isset($_POST['submit'])) {

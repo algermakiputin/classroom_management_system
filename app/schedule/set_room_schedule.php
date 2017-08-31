@@ -1,6 +1,7 @@
 <?php include('../../Includes/database.php') ?>
 <?php include('../../Includes/functions.php') ?>
 <?php session_start(); ?>
+<?php isLogin() ?>	
 <?php
 	$sql = "SELECT * FROM setting";
 	$exec = mysqli_query($con, $sql);

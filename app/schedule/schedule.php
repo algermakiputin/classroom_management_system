@@ -1,5 +1,7 @@
 <?php include('../../Includes/database.php') ?>
 <?php include('../../Includes/functions.php') ?>
+<?php session_start(); ?>
+<?php isLogin() ?>	
 <?php
 // $startTime = "09:00 AM";
 // $endTime = "12:00 PM";
@@ -43,6 +45,7 @@ $setting = mysqli_fetch_assoc($exec);
 						$exec = mysqli_query($con,$sql) ;
 						$room_order = 0;
 						$smallest = 1000;
+
 						while ($row = mysqli_fetch_assoc($exec)) {
 
 							if ($row['room_id'] > $room_order) {
@@ -74,7 +77,8 @@ $setting = mysqli_fetch_assoc($exec);
 		if (!isset($_GET['room_number'])) {
 			?>
 		<?php
-			$sql = "SELECT * FROM schedule WHERE room_id = '$room_order' AND sy_from = '$setting[sy_from]' AND sy_to = '$setting[sy_to]' AND semester = $setting[sem] ORDER BY str_to_date(start_time,'%h:%m %p')";
+			//die(var_dump($smallest));
+			$sql = "SELECT * FROM schedule WHERE r_number = '$smallest' AND sy_from = '$setting[sy_from]' AND sy_to = '$setting[sy_to]' AND semester = $setting[sem] ORDER BY str_to_date(start_time,'%h:%m %p')";
 			$exec = mysqli_query($con,$sql) or die(mysql_errno());
 			$num_rows = mysqli_num_rows($exec);
 			$data = [];

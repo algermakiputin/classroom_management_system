@@ -1,47 +1,40 @@
 <?php include('../../Includes/database.php') ?>
 <?php include('../../Includes/functions.php') ?>
 <?php session_start(); ?>
+<?php isLogin() ?>	
 <?php
 
 if (isset($_POST['submit'])) {
+
 	$name = mysqli_real_escape_string($con,$_POST['name']);
 	$username = mysqli_real_escape_string($con,$_POST['username']);
 	$password = mysqli_real_escape_string($con,$_POST['password']);
 	$conf_password = mysqli_real_escape_string($con,$_POST['conf_password']);
 	$date = getDateTime();
-	if (empty($name)) {
-		$_SESSION['error'] = "Name Is Required";
-	}else if (empty($username)) {
-		$_SESSION['error'] = "Username Is Required";
-	}else if (empty($password)) {
-		$_SESSION['error'] = "Password Is Required";
-	}else if (empty($conf_password)) {
-		$_SESSION['error'] = "Confirm Password Is Required";
-	}else {
 
-		if ($password != $conf_password) {
-			
-			$_SESSION['error'] = "Password and Confirm Password Does Not Match";
+	//Account Validation 
+	$save = AccountRegistrationValidation($name, $username, $password, $conf_password);
 
-		}else if ($password == $conf_password) {
 
-			$hash_pwd = password_hash($password,PASSWORD_DEFAULT);
+	if ($save) {
 
-			$sql = "INSERT INTO accounts (name, username, password,date_created) VALUES('$name','$username','$hash_pwd','$date')";
-			$exec = mysqli_query($con, $sql) or die(mysql_errno());
+		$hash_pwd = password_hash($password, PASSWORD_BCRYPT);
 
-			if ($sql) {
+		$sql = "INSERT INTO accounts (name,username,password,date_created) VALUES ('$name','$username','$hash_pwd','$date')";
 
-				$_SESSION['success'] = "Account Created Successfully";
+		$saveAccount = mysqli_query($con, $sql);
 
-			}else {
+		if ($saveAccount) {
 
-				$_SESSION['error'] = "Opps.. Something Went Wrong";
+			$_SESSION['success'] = "Account Created Successfully";
+		
+		}else {
 
-			}
+			$_SESSION['error'] = "Something Went Wrong Please Try Again";
+
 		}
-	}
 
+	}
 }
 
 
@@ -89,26 +82,43 @@ if (isset($_POST['submit'])) {
 				<form method="POST" action="new_account.php">
 					<div class="form-group">
 						<label for="name">Name *</label>
-						<input placeholder="Full Name" type="text" name="name" class="form-control" required="required">
+						<input placeholder="Full Name" type="text" name="name" class="form-control" >
 					</div>
 					<div class="form-group">
 						<label for="username">Username *</label>
-						<input placeholder="Username" type="text" name="username" class="form-control" required="required">
+						<input placeholder="Username" type="text" name="username" class="form-control" >
 					</div>
 					<div class="form-group">
 						<label for="password">Password *</label>
-						<input placeholder="Password" type="password" name="password" class="form-control" required="required">
+						<input placeholder="Password" type="password" name="password" class="form-control" >
 					</div>
 					<div class="form-group">
 						<label for="conf_password">Confirm Password *</label>
-						<input placeholder="Confirm Password" type="password" name="conf_password" class="form-control" required="required">
+						<input placeholder="Confirm Password" type="password" name="conf_password" class="form-control" >
 					</div>
 					<div class="form-group">
 						<input type="submit" name="submit" class="btn btn-primary" value="Register">
 					</div>
 				</form>
+				<?php if (isset($save)) : ?>
+					<?php if (is_array($save)) : ?>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="alert alert-danger">
+									<ul>
+						<?php foreach ($save as $error) : ?>
+						
+								<li><?php echo $error ?></li>
+									
+						<?php endforeach; ?>
+									</ul>
+								</div>
+							</div>
+						</div>
+					<?php endif; ?>
+				<?php endif; ?>
 			</div>
-
+			
 		</div>
 	</div>
 </div>

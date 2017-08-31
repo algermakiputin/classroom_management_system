@@ -1,6 +1,7 @@
 <?php include('../Includes/database.php') ?>
 <?php include('../Includes/functions.php') ?>
 <?php session_start(); ?>
+<?php isLogin() ?>
 <!DOCTYPE html>
 <html>
 
@@ -18,6 +19,11 @@
 </div>
 <?php include('layout/navigation.php') ?>
 <div class="container">
+<div class="row">
+	<div class="col-md-12">
+		<?php echo successMessage() ?>
+	</div>
+</div>
 <div class="row">
 <div class="col-md-12 dashboard">
 	<?php

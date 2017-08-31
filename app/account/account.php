@@ -1,6 +1,7 @@
 <?php include('../../Includes/database.php') ?>
 <?php include('../../Includes/functions.php') ?>
 <?php session_start(); ?>
+<?php isLogin() ?>	
 <?php
 if (isset($_GET['delete_account'])) {
 	$id = mysqli_real_escape_string($con, $_GET['delete_account']);
@@ -64,6 +65,7 @@ if (isset($_GET['delete_account'])) {
 						$sql = "SELECT * FROM accounts";
 						$exec = mysqli_query($con,$sql);
 						$count = 1;
+		
 						while ($row = mysqli_fetch_assoc($exec)) {
 							?>
 							<tr>

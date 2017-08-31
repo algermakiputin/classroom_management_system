@@ -34,6 +34,11 @@
 							<i class="fa fa-cog" aria-hidden="true"></i> Settings
 						</li>
 					</a>
+					<a href="/app/lagout.php">
+						<li>
+							Sign Out
+						</li>
+					</a>
 				</ul>
 			</div>
 		</div>
